@@ -1,0 +1,31 @@
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center mt-4">
+    {{!-- Prev --}}
+    <li class="page-item {{#unless hasPrev}}disabled{{/unless}}">
+      <a class="page-link" 
+         href="?page={{decrement page}}&size={{size}}&searchString={{searchString}}"
+         aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+
+    {{!-- Trang số --}}
+    {{#each (range 1 totalPages)}}
+      <li class="page-item {{#ifEquals this ../page}}active{{/ifEquals}}">
+        <a class="page-link" 
+           href="?page={{this}}&size={{../size}}&searchString={{../searchString}}">
+          {{this}}
+        </a>
+      </li>
+    {{/each}}
+
+    {{!-- Next --}}
+    <li class="page-item {{#unless hasNext}}disabled{{/unless}}">
+      <a class="page-link"
+         href="?page={{increment page}}&size={{size}}&searchString={{searchString}}"
+         aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

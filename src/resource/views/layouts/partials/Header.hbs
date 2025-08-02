@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">MinhDuc</a>
+
+    <!-- Toggler/collapsible Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left-aligned nav links (nếu có) -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Ví dụ:
+        <li class="nav-item">
+          <a class="nav-link" href="/course">Courses</a>
+        </li>
+        -->
+      </ul>
+
+      <!-- Right-aligned user dropdown -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle p-0"
+            href="#"
+            id="userDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/127073010?s=400&u=631d22b33878c6806da4a1a5f5b4135001e9b00b&v=4"
+              alt="Avatar"
+              class="rounded-circle"
+              width="32"
+              height="32"
+            >
+            Minh Đức
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="/course/create">Đăng khóa học</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="/me/store/course">Khóa học của tôi </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/auth/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

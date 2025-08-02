@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+* {
+  font-family: $font-stack;
+}
+
+body {  
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+h1 {
+  background-color: $primary-color;
+}

@@ -1,0 +1,39 @@
+<body>
+  <div class="user-detail-container">
+    <!-- Header -->
+    <header class="user-header">
+      <h1>Trang Chi Tiết Người Dùng</h1>
+    </header>
+
+    <!-- User Profile -->
+    <section class="user-profile">
+      <div class="avatar-wrapper">
+        {{#if avatarPath}}
+          <img src="{{avatarPath}}" alt="Avatar" class="user-avatar" />
+        {{else}}
+          <img src="/avatar/default-avatar.png"  alt="Avatar" class="user-avatar"/>
+        {{/if}}
+
+      </div>
+      <div class="user-info">
+        <h2 class="user-name">Nguyễn Minh Đức</h2>
+        <button type="button" class="btn-change-password">Thay Đổi Mật Khẩu</button>
+      </div>
+      <!-- Thêm action và method -->
+      <form id="uploadForm" action="/me/upload/avatar" method="POST" enctype="multipart/form-data">
+        <input type="file" id="avatarInput" name="avatar" accept="image/*" />
+      </form>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Hệ thống học trực tuyến</p>
+  </footer>
+
+  <script>
+    // Khi chọn file, tự động submit form
+    document.getElementById('avatarInput').addEventListener('change', function() {
+      document.getElementById('uploadForm').submit();
+    });
+  </script>
+</body>

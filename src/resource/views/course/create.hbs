@@ -1,0 +1,135 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="card-title mb-4">Tạo mới Course</h1>
+
+          {{#if errors}}
+            <div class="alert alert-danger">{{errors}}</div>
+          {{/if}} 
+
+          <form action="/course/store" method="POST" novalidate>
+            <div class="mb-3">
+              <label for="courseId" class="form-label">Course ID<span class="text-danger">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="courseId"
+                name="courseId"
+                value="{{course.courseId}}"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label for="title" class="form-label">Tiêu đề<span class="text-danger">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                value="{{course.title}}"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Mô tả</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                rows="4"
+              >{{course.description}}</textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="instructorName" class="form-label">Tên giảng viên</label>
+              <input
+                type="text"
+                class="form-control"
+                id="instructorName"
+                name="instructorName"
+                value="{{course.instructorName}}"
+              >
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="category" class="form-label">Danh mục</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="category"
+                  name="category"
+                  value="{{course.category}}"
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="level" class="form-label">Trình độ</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="level"
+                  name="level"
+                  value="{{course.level}}"
+                >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="durationHours" class="form-label">Thời lượng (giờ)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="durationHours"
+                  name="durationHours"
+                  value="{{course.durationHours}}"
+                >
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="price" class="form-label">Giá</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  value="{{course.price}}"
+                  step="0.01"
+                >
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="studentsEnrolled" class="form-label">Số học viên</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="studentsEnrolled"
+                  name="studentsEnrolled"
+                  value="{{course.studentsEnrolled}}"
+                >
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="tags" class="form-label">Tags <small class="text-muted">(ngăn cách dấu phẩy)</small></label>
+              <input
+                type="text"
+                class="form-control"
+                id="tags"
+                name="tags"
+                value="{{course.tags}}"
+              >
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Tạo Course</button>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

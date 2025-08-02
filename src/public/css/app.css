@@ -1,0 +1,22 @@
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #ce0e0e;
+}
+
+h1 {
+  background-color: #ce0e0e;
+}
+
+/*# sourceMappingURL=app.css.map */
+
+footer.fixed-bottom {
+  position: static !important;
+  width: 100%;
+}
+body {
+  padding-bottom: 80px; /* space for fixed footer */
+}

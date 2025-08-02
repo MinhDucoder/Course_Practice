@@ -1,0 +1,68 @@
+<div class="container my-5">
+  <div class="row g-4">
+    <!-- Ảnh lớn -->
+    <div class="col-12">
+      <img src="{{course.imageUrl}}" alt="{{course.title}}" class="img-fluid rounded shadow-sm w-100" style="max-height: 400px; object-fit: cover;">
+    </div>
+
+    <!-- Tiêu đề & Thông tin cơ bản -->
+    <div class="col-md-8">
+      <h1 class="display-5">{{course.title}}</h1>
+      <p class="text-muted mb-1">
+        <i class="bi bi-person-circle"></i> {{course.instructor.name}}
+        &nbsp;|&nbsp;
+        <i class="bi bi-tag-fill"></i> {{course.category}}
+        &nbsp;|&nbsp;
+        <i class="bi bi-bar-chart-fill"></i> {{course.level}}
+      </p>
+      <p class="small">
+        <i class="bi bi-clock-fill"></i> {{course.durationHours}} giờ
+        &nbsp;|&nbsp;
+        <i class="bi bi-people-fill"></i> {{course.studentsEnrolled}} học viên
+      </p>
+      <hr>
+
+      <!-- Mô tả chi tiết -->
+      <div class="mb-4">
+        <h4>Mô tả khóa học</h4>
+        <p>{{course.description}}</p>
+      </div>
+
+      <!-- Giá & Nút hành động -->
+      <div class="d-flex align-items-center">
+        <h2 class="me-4 text-primary">${{course.price}}</h2>
+        <a href="/cart/add/{{course.courseId}}" class="btn btn-lg btn-success">
+          <i class="bi bi-cart-plus-fill"></i> Thêm vào giỏ hàng
+        </a>
+      </div>
+    </div>
+
+    <!-- Sidebar: Tags và Thông tin meta -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-light">
+          <strong>Tags</strong>
+        </div>
+        <div class="card-body">
+          {{#each course.tags}}
+            <span class="badge bg-secondary me-1 mb-1">{{this}}</span>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-light">
+          <strong>Thông tin khác</strong>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Ngày tạo: {{formatDate course.createdAt}}
+          </li>
+          <li class="list-group-item">
+            Cập nhật: {{formatDate course.updatedAt}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
